@@ -1,11 +1,27 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from '../screens/HomeScreen';
+
+export type HomeStackParamList = {
+    HomeMain: undefined;
+    NewTrip: undefined;
+    PlanTrip: { trip: any };
+    AIChat: undefined;
+    MapScreen: undefined
+}
 
 const HomeStack = () => {
+
+    const Stack = createNativeStackNavigator<HomeStackParamList>()
+
     return (
-        <View>
-            <Text>HomeStack</Text>
-        </View>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen
+                name='HomeMain'
+                component={HomeScreen}
+            />
+        </Stack.Navigator>
     )
 }
 
