@@ -4,6 +4,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
 import FeaturedGuides from '../components/FeaturedGuides';
 import PopularDestinations from '../components/PopularDestinations';
+import WeekendTrips from '../components/WeekendTrips';
 
 export type HomeStackParamList = {
     HomeMain: undefined;
@@ -64,6 +65,10 @@ const HomeScreen = () => {
                 <View className='p-4'>
                     <Text className='text-2xl font-semibold mb-4'>Featured guides from users</Text>
                     <FeaturedGuides />
+                </View>
+                 <View className='p-4'>
+                    <Text className='text-2xl font-semibold mb-4'>Weekend Trips</Text>
+                    <WeekendTrips />
                 </View>
                 <View className='p-4'>
                     <Text className='text-2xl font-semibold mb-4'>Popular Destinations</Text>
