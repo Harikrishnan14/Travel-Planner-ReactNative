@@ -2,6 +2,7 @@ import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, Vi
 import React from 'react'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
+import FeaturedGuide from '../components/FeaturedGuide';
 
 export type HomeStackParamList = {
     HomeMain: undefined;
@@ -43,7 +44,26 @@ const HomeScreen = () => {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View className='borer-b border-gray-200 mx-4'/>
+                <View className='borer-b border-gray-200 mx-4' />
+                <View className='relative'>
+                    <Image
+                        source={{
+                            uri: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+                        }}
+                        className='w-full h-80'
+                        resizeMode='cover'
+                    />
+                    <View className='absolute inset-0 flex items-center justify-center'>
+                        <Text className='text-white text-4xl font-bold text-center px-10'>Plan your next adventure</Text>
+                        <TouchableOpacity className='bg-orange-500 px-6 py-2 rounded-full mt-4'>
+                            <Text className='text-white font-semibold text-base'>Create new trip plan</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                <View className='p-4'>
+                    <Text className='text-2xl font-semibold mb-4'>Featured guides from users</Text>
+                    <FeaturedGuide />
+                </View>
             </ScrollView>
         </SafeAreaView>
     )
