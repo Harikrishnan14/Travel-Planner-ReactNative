@@ -2,7 +2,8 @@ import { Image, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, Vi
 import React from 'react'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { useNavigation } from '@react-navigation/native';
-import FeaturedGuide from '../components/FeaturedGuide';
+import FeaturedGuides from '../components/FeaturedGuides';
+import PopularDestinations from '../components/PopularDestinations';
 
 export type HomeStackParamList = {
     HomeMain: undefined;
@@ -62,7 +63,11 @@ const HomeScreen = () => {
                 </View>
                 <View className='p-4'>
                     <Text className='text-2xl font-semibold mb-4'>Featured guides from users</Text>
-                    <FeaturedGuide />
+                    <FeaturedGuides />
+                </View>
+                <View className='p-4'>
+                    <Text className='text-2xl font-semibold mb-4'>Popular Destinations</Text>
+                    <PopularDestinations />
                 </View>
             </ScrollView>
         </SafeAreaView>
