@@ -2,6 +2,10 @@ import { Dimensions, ImageBackground, Pressable, SafeAreaView, ScrollView, Style
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { GuideStackParamList } from '../navigation/GuideStack';
+
+type GuideScreenNavigationProp = NativeStackNavigationProp<GuideStackParamList>;
 
 const places = [
     {
@@ -60,7 +64,7 @@ const places = [
 
 const GuideScreen = () => {
 
-    const navigation = useNavigation()
+    const navigation = useNavigation<GuideScreenNavigationProp>()
 
     return (
         <SafeAreaView className='flex-1 bg-white'>
